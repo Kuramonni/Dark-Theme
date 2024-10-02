@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Animation</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="hamburger">&#9776;</div>
+      <!-- Hamburger Icon -->
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <h1 class="title">This Is The Heading.</h1>
+
+    <div class="card">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ad
+        exercitationem voluptatem ullam et, natus impedit quae veniam optio a
+        doloremque officiis beatae, itaque nesciunt nostrum quasi molestiae
+        laudantium dolor asperiores soluta sint sed ratione cupiditate.
+        Laudantium earum reiciendis enim.
+      </p>
+    </div>
+
+    <div class="icons">
+      <i class="fa-brands fa-github-alt fa-3x"></i>
+      <i class="fa-brands fa-codepen fa-3x"></i>
+      <i class="fa-brands fa-linkedin-in fa-3x"></i>
+    </div>
+
+    <div class="banner">
+      <h2>This Is Another Heading.</h2>
+      <img src="img/monni.png" />
+      <h2>This Is Another Heading.</h2>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector("header ul");
+
+        hamburger.addEventListener("click", function () {
+          hamburger.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
