@@ -1,16 +1,24 @@
+/* Reset styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles for the document */
 html {
   font-family: 'Poppins', sans-serif;
   color: #f0f0f0;
 }
 
+/* Body background with gradient */
 body {
-  background: #0b0d15;
+  background: linear-gradient(180deg, #0b0d15, #1c1f2b);
+}
+
+/* General text styling */
+h1, h2 {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Header */
@@ -25,22 +33,22 @@ header {
   margin-bottom: 2em;
 }
 
+/* Hidden menu for mobile */
 header ul {
-  display: none; 
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 10px;
-  padding: 0;
-  margin: 0;
   list-style: none;
   position: absolute;
-  top: 5em; 
+  top: 5em;
   left: 0;
   width: 100%;
 }
 
+/* Navigation link styling */
 header ul li a {
   text-decoration: none;
   color: #0b0d15;
@@ -48,17 +56,17 @@ header ul li a {
   font-weight: 500;
   padding: 8px 10px;
   display: block;
-  width: 100%;
   text-align: center;
   transition: color 0.3s ease;
   text-transform: lowercase;
 }
 
+/* Hover effect for links */
 header ul li a:hover {
   color: #007bff;
 }
 
-/* Hamburger icon */
+/* Hamburger menu styling for mobile */
 .hamburger {
   display: block;
   cursor: pointer;
@@ -66,32 +74,30 @@ header ul li a:hover {
   color: #0b0d15;
 }
 
-/* Toggle for showing the menu */
+/* Toggle active state for showing the menu */
 .hamburger.active + ul {
-  display: flex; 
+  display: flex;
   z-index: 4;
   background-color: #cacaca;
   border-radius: 5px;
-  width: 100%; 
-  justify-content: center; 
-  align-items: center; 
+  width: 100%;
+  justify-content: center;
   text-align: center;
   margin: auto;
-  max-height: 0; 
-  overflow: hidden; 
-  transition: max-height 1s ease-out; 
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
 }
 
-/* Active state */
+/* Active state of menu */
 .hamburger.active + ul.active {
-  max-height: 300px; 
+  max-height: 300px;
 }
 
-
-/* Larger screens (tablets and up) */
+/* Styles for larger screens */
 @media (min-width: 768px) {
   .hamburger {
-    display: none; 
+    display: none;
   }
 
   header {
@@ -102,9 +108,9 @@ header ul li a:hover {
   }
 
   header ul {
-    display: flex; 
+    display: flex;
     flex-direction: row;
-    position: static; 
+    position: static;
     gap: 20px;
     width: auto;
   }
@@ -115,7 +121,8 @@ header ul li a:hover {
   }
 }
 
-.title{
+/* Main Title Styling */
+.title {
   color: white;
   text-align: center;
   margin-top: 1em;
@@ -123,18 +130,19 @@ header ul li a:hover {
   font-size: 4em;
 }
 
-/* Card Styles */
+/* Card Section */
 .card {
   margin: 0 auto;
   padding: 2em;
-  width: 300px;
+  width: 80%;
+  max-width: 600px;
   background: #1c1f2b;
   text-align: center;
   border-radius: 10px;
   position: relative;
 }
 
-/* Conic gradient animation */
+/* Conic gradient animation for card border */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -171,16 +179,17 @@ header ul li a:hover {
   }
 }
 
+/* Banner */
 .banner {
   position: relative;
-  background: linear-gradient(90deg, #ff4545, #00ff99, #006aff, #ff0095); /* Linear gradient */
+  background: linear-gradient(90deg, #ff4545, #00ff99, #006aff, #ff0095);
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 8em;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .banner::before {
@@ -188,7 +197,7 @@ header ul li a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #ff4545, #00ff99, #006aff, #ff0095); /* Same gradient */
+  background: linear-gradient(90deg, #ff4545, #00ff99, #006aff, #ff0095);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -197,45 +206,124 @@ header ul li a:hover {
   opacity: 0.5;
 }
 
+/* Hide heading in the banner by default */
 .banner h2 {
-  display: none !important; 
+  display: none !important;
 }
 
-/* Show .banner h1 on tablets and desktops */
+/* Show banner heading on larger screens */
 @media (min-width: 768px) {
   .banner h2 {
-    display: block !important; 
+    display: block !important;
     color: rgb(0, 0, 0);
     font-size: 2em;
     text-align: left;
-    z-index: 1; 
+    z-index: 1;
   }
 }
 
+/* Banner image styling */
 .banner img {
-  width: 60%; 
-  max-width: 300px; 
+  width: 60%;
+  max-width: 300px;
   height: auto;
-  border-radius: 50%; 
+  border-radius: 50%;
   position: relative;
-  z-index: 1; 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 1); 
+  z-index: 1;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 1);
 }
 
+/* Icons */
 .icons {
   display: flex;
   justify-content: center;
   gap: 1em;
   margin: 4em 0 4em 0;
-
 }
 
+/* Icon hover effect */
 .icons i {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .icons i:hover {
-  transform: scale(1.2); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Background */
+.background {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0b0d15;
+}
+
+/* Blurred background image */
+.blurred-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+/* Content Section */
+.content {
+  position: relative;
+  z-index: 2;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 6em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animated Text */
+.animated-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 2em;
+  font-size: 2em;
+  margin-top: 3em;
+}
+
+/* Animation for individual words */
+.animated-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Visible class for animating appearance */
+.animated-text span.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delay for each word */
+.animated-text span:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animated-text span:nth-child(2) {
+  transition-delay: 0.6s;
+}
+.animated-text span:nth-child(3) {
+  transition-delay: 1s;
+}
+.animated-text span:nth-child(4) {
+  transition-delay: 1.4s;
+}
+.animated-text span:nth-child(5) {
+  transition-delay: 1.8s;
+}

@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Border Animation</title>
+    <title>Dark Site</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- FontAwesome CDN -->
+    <!-- FontAwesome CDN for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
+    <!-- Header section containing the hamburger menu and navigation links -->
     <header>
       <div class="hamburger">&#9776;</div>
-      <!-- Hamburger Icon -->
+      <!-- Hamburger icon for mobile menu -->
       <ul>
+        <!-- Navigation links -->
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -23,8 +25,10 @@
       </ul>
     </header>
 
+    <!-- Main title section -->
     <h1 class="title">This Is The Heading.</h1>
 
+    <!-- Card section for displaying content with border animation -->
     <div class="card">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ad
@@ -35,28 +39,37 @@
       </p>
     </div>
 
+    <!-- Icon section displaying social media icons -->
     <div class="icons">
+      <!-- Using FontAwesome icons with sizing (fa-3x) -->
       <i class="fa-brands fa-github-alt fa-3x"></i>
       <i class="fa-brands fa-codepen fa-3x"></i>
       <i class="fa-brands fa-linkedin-in fa-3x"></i>
     </div>
 
+    <!-- Banner section with an image and headings -->
     <div class="banner">
       <h2>This Is Another Heading.</h2>
       <img src="img/monni.png" />
       <h2>This Is Another Heading.</h2>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.querySelector(".hamburger");
-        const menu = document.querySelector("header ul");
+    <!-- Background section with a blurred image and animated text -->
+    <div class="background">
+      <img src="img/neon.jpg" alt="Blurred Background" class="blurred-image" />
+      <div class="content">
+        <!-- Text that will animate on scroll, with each word wrapped in <span> -->
+        <h1 class="animated-text">
+          <span>Systematic Approach</span>
+          <span>Attention To Detail</span>
+          <span>Visual Design</span>
+          <span>Adaptability</span>
+          <span>Cool Words</span>
+        </h1>
+      </div>
+    </div>
 
-        hamburger.addEventListener("click", function () {
-          hamburger.classList.toggle("active");
-          menu.classList.toggle("active");
-        });
-      });
-    </script>
+    <!-- JavaScript for scroll animations and hamburger menu functionality -->
+    <script src="script.js"></script>
   </body>
 </html>
