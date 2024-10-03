@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dark Site</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Abril+Fatface&family=Silkscreen:wght@400;700&family=Play:wght@400;700&family=Archivo+Black&family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- FontAwesome CDN for icons -->
     <link
       rel="stylesheet"
@@ -14,8 +22,10 @@
   <body>
     <!-- Header section containing the hamburger menu and navigation links -->
     <header>
-      <div class="hamburger">&#9776;</div>
       <!-- Hamburger icon for mobile menu -->
+      <h1>WEBSITE NAME</h1>
+      <div class="hamburger">&#9776;</div>
+
       <ul>
         <!-- Navigation links -->
         <li><a href="#home">Home</a></li>
@@ -41,7 +51,6 @@
 
     <!-- Icon section displaying social media icons -->
     <div class="icons">
-      <!-- Using FontAwesome icons with sizing (fa-3x) -->
       <i class="fa-brands fa-github-alt fa-3x"></i>
       <i class="fa-brands fa-codepen fa-3x"></i>
       <i class="fa-brands fa-linkedin-in fa-3x"></i>
@@ -56,18 +65,69 @@
 
     <!-- Background section with a blurred image and animated text -->
     <div class="background">
-      <img src="img/neon.jpg" alt="Blurred Background" class="blurred-image" />
+      <img src="img/neon2.jpg" alt="Blurred Background" class="blurred-image" />
       <div class="content">
-        <!-- Text that will animate on scroll, with each word wrapped in <span> -->
-        <h1 class="animated-text">
-          <span>Systematic Approach</span>
-          <span>Attention To Detail</span>
-          <span>Visual Design</span>
-          <span>Adaptability</span>
-          <span>Cool Words</span>
-        </h1>
+        <div class="left-item">
+          <!-- Text that will animate on scroll, with each word wrapped in <span> -->
+          <h1 class="animated-text">
+            <span>Systematic Approach</span>
+            <span>Attention To Detail</span>
+            <span>Visual Design</span>
+            <span>Adaptability</span>
+            <span>Cool Words</span>
+          </h1>
+        </div>
+
+        <div class="right-item">
+          <div class="skill">
+            <i class="fa-solid fa-wand-magic-sparkles fa-3x"></i>
+            <h3>Frontend Development</h3>
+            <p>
+              CSS | HTML | JavaScript | React | Bootstrap | Tailwind | WordPress
+            </p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-server fa-3x"></i>
+            <h3>Backend Development</h3>
+            <p>PHP | Python | Node.js | MySQL | MongoDB</p>
+          </div>
+
+          <div class="skill">
+            <i class="fa-solid fa-screwdriver-wrench fa-3x"></i>
+            <h3>Technical Tools</h3>
+            <p>
+              VS Code | Git | NPM | XAMPP | Figma | Photoshop | Premiere Pro
+            </p>
+          </div>
+
+          <div class="skill">
+            <i class="fa-solid fa-circle-check fa-3x"></i>
+            <h3>Project Practices</h3>
+            <p>
+              Agile | Scrum | Kanban | Testing | Documentation | Version Control
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="img-textbox">
+      <img class="birbs" src="img/birb.jpg" alt="Birds" />
+
+      <div class="textbox">
+        <h1>Heading Here</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
+          voluptates cupiditate harum asperiores, repudiandae ipsam officiis
+          nisi illo eligendi sed, facilis iste laudantium, rerum nihil
+          doloremque quam ea eaque porro.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Armi Lampen</p>
+    </footer>
 
     <!-- JavaScript for scroll animations and hamburger menu functionality -->
     <script src="script.js"></script>

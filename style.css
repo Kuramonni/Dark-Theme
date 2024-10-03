@@ -13,7 +13,7 @@ html {
 
 /* Body background with gradient */
 body {
-  background: linear-gradient(180deg, #0b0d15, #1c1f2b);
+  background: black;
 }
 
 /* General text styling */
@@ -24,46 +24,20 @@ h1, h2 {
 /* Header */
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #cacaca;
+  justify-content: space-between; 
+  align-items: center; 
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2em;
+  font-family: 'Quantico';
+  font-weight: 100;
+  letter-spacing: 0.1em; 
 }
 
-/* Hidden menu for mobile */
-header ul {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  list-style: none;
-  position: absolute;
-  top: 5em;
-  left: 0;
-  width: 100%;
-}
-
-/* Navigation link styling */
-header ul li a {
-  text-decoration: none;
-  color: #0b0d15;
-  font-size: 1em;
-  font-weight: 500;
-  padding: 8px 10px;
-  display: block;
-  text-align: center;
-  transition: color 0.3s ease;
-  text-transform: lowercase;
-}
-
-/* Hover effect for links */
-header ul li a:hover {
-  color: #007bff;
+header h1 {
+  font-size: 1.5em;
+  color: #ffffff;
 }
 
 /* Hamburger menu styling for mobile */
@@ -71,48 +45,68 @@ header ul li a:hover {
   display: block;
   cursor: pointer;
   font-size: 2em;
-  color: #0b0d15;
+  color: #ffffff;
 }
 
-/* Toggle active state for showing the menu */
+/* Hide the navigation (ul) on mobile by default */
+header ul {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  background: linear-gradient(180deg, #000000, #333333, #000000);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 4;
+}
+
+/* Navigation link styling */
+header ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 10px 20px;
+  display: block;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+header ul li a:hover {
+  color: #007bff;
+}
+
+/* Toggle active state for showing the menu on mobile */
 .hamburger.active + ul {
   display: flex;
-  z-index: 4;
-  background-color: #cacaca;
-  border-radius: 5px;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease-out;
-}
-
-/* Active state of menu */
-.hamburger.active + ul.active {
-  max-height: 300px;
 }
 
 /* Styles for larger screens */
 @media (min-width: 768px) {
   .hamburger {
-    display: none;
+    display: none; 
   }
 
   header {
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    height: 5em;
+    justify-content: space-between; 
+    padding: 20px 40px;
   }
 
   header ul {
     display: flex;
     flex-direction: row;
     position: static;
-    gap: 20px;
+    background: none;
+    gap: 50px;
     width: auto;
+    padding: 0;
   }
 
   header ul li a {
@@ -126,8 +120,11 @@ header ul li a:hover {
   color: white;
   text-align: center;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-size: 4em;
+  font-family: 'Play';
+
+  padding: 0.5em;
 }
 
 /* Card Section */
@@ -140,6 +137,9 @@ header ul li a:hover {
   text-align: center;
   border-radius: 10px;
   position: relative;
+  font-family: 'Play';
+  font-size: large;
+  line-height: 1.6;
 }
 
 /* Conic gradient animation for card border */
@@ -209,6 +209,7 @@ header ul li a:hover {
 /* Hide heading in the banner by default */
 .banner h2 {
   display: none !important;
+  font-family: 'Silkscreen';
 }
 
 /* Show banner heading on larger screens */
@@ -217,7 +218,7 @@ header ul li a:hover {
     display: block !important;
     color: rgb(0, 0, 0);
     font-size: 2em;
-    text-align: left;
+    text-align: center;
     z-index: 1;
   }
 }
@@ -241,6 +242,13 @@ header ul li a:hover {
   margin: 4em 0 4em 0;
 }
 
+@media screen and (min-width: 768px) {
+  .icons {
+    margin: 5em 0 10em 0;
+  }
+  
+}
+
 /* Icon hover effect */
 .icons i {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -255,9 +263,10 @@ header ul li a:hover {
 .background {
   position: relative;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: #0b0d15;
+  margin-bottom: 3em;
 }
 
 /* Blurred background image */
@@ -269,6 +278,18 @@ header ul li a:hover {
   height: 100%;
   object-fit: cover;
   opacity: 0.5;
+}
+
+/* Gradient fading from image to a solid background */
+.background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #000000); 
+  z-index: 1;
 }
 
 /* Content Section */
@@ -285,6 +306,77 @@ header ul li a:hover {
   align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+}
+
+.left-item{
+  margin: 2em;
+
+}
+
+@media screen and (min-width: 768px) {
+  .left-item {
+    width: 50%;
+  }
+  
+}
+
+.right-item {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1em;
+  text-align: center; 
+}
+
+@media screen and (min-width: 768px) {
+  .right-item {
+    width: 50%;
+  }
+
+  .right-item > * { 
+    width: 100%; 
+
+  }
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 2em;
+  font-family: 'Play';
+  font-size: large;
+}
+
+.skill i {
+  background-color: #ffffff;
+  border-radius: 100px;
+  padding: 0.3em;
+  box-shadow: #000000 0px 0px 10px;
+  color: black;
+}
+
+.skill h3 {
+  color: white;
+  text-shadow: #000000 0px 0px 10px;
+
+}
+
+.skill h1, .skill p {
+    flex-grow: 1; 
+  }
+
 /* Animated Text */
 .animated-text {
   display: flex;
@@ -294,7 +386,6 @@ header ul li a:hover {
   align-items: center;
   gap: 2em;
   font-size: 2em;
-  margin-top: 3em;
 }
 
 /* Animation for individual words */
@@ -303,6 +394,10 @@ header ul li a:hover {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  font-family: 'Orbitron';
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 /* Visible class for animating appearance */
@@ -326,4 +421,70 @@ header ul li a:hover {
 }
 .animated-text span:nth-child(5) {
   transition-delay: 1.8s;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+
+}
+
+.textbox h1 {
+  font-size: 5em;
+  font-family: 'Fatface';
+}
+
+.textbox p {
+  font-size: 1.5em;
+  font-family: 'Play';
+}
+
+.birbs {
+  width: 80%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.img-textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+
+}
+
+@media screen and (min-width: 768px) {
+  .img-textbox {
+    flex-direction: row;
+
+  }
+
+  .birbs {
+    width: 50%;
+    padding: 0 4em 0 4em;
+  }
+
+  .textbox {
+    width: 50%;
+    padding: 0 4em 0 4em;
+  }
+  
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 4em;
 }
